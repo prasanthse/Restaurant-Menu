@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Payment</title>
+        <link rel="stylesheet" type="text/css" href="food_court.css" />
+        <style type="text/css">
+            img.wood{
+                position: absolute;
+                margin-top: -15%;
+                margin-left: 1%;
+                width: 98%;
+                z-index: -2;
+            }
+            div.infoNeed{
+                position: absolute;
+                margin-top: -7%;
+                margin-left: 17%;
+                font-family: cursive;
+                font-size: 170%;
+                color: #f7b240;
+                text-shadow: -1px 0 black, 0 5px black, 1px 0 black, 0 -1px black;
+            }
+            div.boxes{
+                position: absolute;
+                margin-left: 47%;
+                margin-top: -6.5%;
+            }
+            input.form{
+                position: relative;
+                margin-top: 10%;
+                margin-bottom: 15%;
+                display: block;
+                height: 6%;
+                font-size: 150%;
+                font-family: cursive;
+                color: chocolate;
+                text-transform: uppercase;
+            }
+            input.submit{
+                margin-top: 33%;
+                position: absolute;
+                font-size: 150%;
+                font-family: cursive;
+                font-weight: bold;
+                background-color: #f7b240;
+                border: 1px solid black;
+                margin-left: -15%;
+            }
+            marquee{
+                margin-top: 8%;
+                color: white;
+                font-weight: bold;
+            }
+            .submit:hover{
+                background-color: chocolate;
+                font-size: 120%;
+            }
+        </style>
+        <script type="text/javascript">
+             
+            function validateForm(){
+                
+                var name = document.getElementById("fullName").value;
+                var phone = document.getElementById("phoneNumber").value;
+                var email = document.getElementById("mail").value;
+                var cardNo = document.getElementById("card").value;
+                var pinNo = document.getElementById("pin").value;
+                
+                if((name == "" || name == null)||(phone == "" || phone == null)||(email == "" || email == null)||(cardNo == "" || cardNo == null)||(pinNo == "" || pinNo == null)){
+                   alert('Please fill all the fields');
+                }else{
+                   validateName();
+                }
+                
+                function validateName(){
+                    if(isNaN(name)){
+                        validatePhone();
+                    }
+                    else{
+                        alert('Please enter a suitable Full Name without having numbers');
+                    }
+                }
+                
+                function validatePhone(){
+                    if(isNaN(phone)){
+                       alert('Phone numbers can have only numberic values');
+                    }else if(phone.length != 10){
+                        alert('Your phone number should be 10numbers');
+                    }
+                    else{
+                        validateMail();
+                    }
+                }
+                
+                function validateMail(){
+                    var positionAt = email.indexOf("@");
+                    var positionDot = email.indexOf(".");
+                
+                    if((positionAt<1)||(positionDot<positionAt+2)||(positionDot+2>=email.length)){
+                        alert("Invalid Email format");
+                    }else{
+                        validateCard();
+                    }
+                }
+                
+                function validateCard(){
+                    if(isNaN(cardNo)){
+                       alert('Card numbers can have only numberic values');
+                    }else {
+                        validatePin();
+                    }
+                }
+                
+                function validatePin(){
+                    if(isNaN(pinNo)){
+                       alert('Pin numbers can have only numberic values');
+                    }else {
+                        confirmation();
+                    }
+                }
+                
+                function confirmation(){
+                    var decision = confirm('Are you sure, do you want to continue?');
+                    if(decision){
+                        alert('THANK YOU!');
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="title">
+            <img class="title" src="Images/Designing_Process/Name.png">
+        </div>
+        <div class="logo">
+            <img class="logo" src="Images/Designing_Process/Logo.png">
+        </div>
+        <img class="wood" src="Images/Designing_Process/WoodWallFrame.png">
+        <div class="form">
+            <div class="infoNeed">
+                <h2>FULL NAME</h2>
+                <h2>PHONE NUMBER</h2>
+                <h2>E-MAIL</h2>
+                <h2>CREDIT / DEBIT #</h2>
+                <h2>PIN #</h2>
+            </div>
+            <div class="boxes">
+                <form method="post" action="localhost/Insert.php">
+                    <input class="form" style="width: 200%" type="text" id="fullName" required>
+                    <input class="form" style="width: 60%" type="text" id="phoneNumber" required>
+                    <input class="form" style="width: 150%; text-transform:none;" type="text" id="mail" required>
+                    <input class="form" style="width: 200%" type="text" id="card" required>
+                    <input class="form" style="width: 20%" type="text" id="pin" required>
+                    
+                    <input class="submit" type="submit" value="SUBMIT" onclick="validateForm()">
+                    <input style="margin-left: 35%;" class="submit" type="reset" value="RESET">
+                </form>
+            </div>
+        </div>
+        <a href="Home.html" target="_blank"><img style="width: 10%; margin-top: 20%" src="Images/Designing_Process/Home.png"></a>
+        <marquee dir="ltr">COPYRIGHT &copy; 2018. ALL RIGHTS RESERVED</marquee>
+    </body>
+</html>

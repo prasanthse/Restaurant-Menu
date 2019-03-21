@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Order Food</title>
+        <style type="text/css">
+            body{
+                backface-visibility: hidden;
+            }
+            img.wood{
+                position: absolute;
+                margin-top: 0%;
+                margin-left: 0%;
+                margin-bottom: 0%;
+                width: 99%;
+                z-index:-1;
+            }
+            iframe{
+                position: absolute;
+                height: 720px;
+                margin-top: 10%;
+                margin-left: 8%;
+                width: 45%;
+                height: 70%;
+                z-index: 0;
+            }
+            h2{
+                position: absolute;
+                margin-top: 6%;
+                margin-left: 60%;
+                font-family: cursive;
+                color: #f7b240;
+                text-shadow: -1px 0 black, 0 5px black, 1px 0 black, 0 -1px black;
+            }
+            input.date{
+                float: left;
+                position: absolute;
+                margin-top: 6.5%;
+                margin-left: 88%;
+                background-color: #f7b240;
+                border: 1px solid black;
+                z-index: 1;
+            }
+            img.frame{
+                position: absolute;
+                margin-top: 10%;
+                margin-left: 55%;
+                width: 40%;
+                height: 70%;
+            }
+            img.arrows{
+                position: absolute;
+                width: 15%;
+                margin-top: 36%;
+                margin-left: 12%;
+            }
+            ul{
+                position:relative;
+                list-style-type:none;
+                margin-top: -40%;
+                margin-left: 6%;
+            }
+            a.navi{
+                font-family: cursive;
+                background-color:#f7b240;
+                float: left;
+                font-weight:bold;
+                color:black;
+                width:8%;
+                text-align:center;
+                padding:2px;
+                border: 2px solid black;
+                margin-right: 0.5%;
+            }
+            a.navi:link,a.navi:visited{               
+                text-decoration:none;
+            }
+            a.navi:hover,a.navi:active{
+                background-color:chocolate;
+            }
+            div.list{
+                position: relative;
+                width: 28.2%;
+                height: 5%;
+                margin-left: 61.7%;
+                margin-top: 9%;
+                overflow:hidden;
+            }
+            p.para{
+                font-family: cursive;
+                color: white;
+                font-size: 750%;
+                margin-top: -2%;
+                margin-left: 30%;
+            }
+        </style>
+        <script type="text/javascript">
+            function bill(id){
+               //wants to add total when click the image and reduce the total if once again click the image
+            }    
+        </script>
+    </head>
+    <body onload="bill()">
+        <img class="wood" src="Images/Designing_Process/WoodWallFrame.png">
+        <iframe src="ImageSet1.html" name="showFrameO" id="Foodlist" frameborder="0"></iframe>
+        <h2>SELECT A DATE HERE</h2>
+        <input class="date" style="margin-left: 80%;" type="time">
+        <input class="date" type="date">
+        <img class="frame" src="Images/Designing_Process/frame.png">
+        <a href="Home.html" target="_blank"><img style="width: 10%; margin-top: 35%" src="Images/Designing_Process/Home.png"></a>
+        <div>
+            <ul>
+                <li><a class="navi" href="ImageSet1.html" target="showFrameO" id="s1" onclick="bill(this.id)">BREAKFAST</a></li>
+                <li><a class="navi" href="ImageSet4.html" target="showFrameO" id="s4" onclick="bill(this.id)">LUNCH</a></li>
+                <li><a class="navi" href="ImageSet3.html" target="showFrameO" id="s3" onclick="bill(this.id)">DINNER</a></li>
+                <li><a class="navi" href="ImageSet5.html" target="showFrameO" id="s5" onclick="bill(this.id)">TEA</a></li>
+                <li><a class="navi" href="ImageSet2.html" target="showFrameO" id="s2" onclick="bill(this.id)">DESSERT</a></li>
+            </ul>
+        </div>
+        <div class="list">
+        <p class="para">RS</p>
+        <p style="margin-top: -25%; margin-left: 25%;" class="para" id="amount">000</p>
+        </div>
+    </body>
+</html>

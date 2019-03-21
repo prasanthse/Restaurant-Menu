@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Table Booking</title>
+        <style type="text/css">
+            body{
+                backface-visibility: hidden;
+            }
+            img.wood{
+                position: absolute;
+                margin-top: 0%;
+                margin-left: 0%;
+                margin-bottom: 0%;
+                width: 99%;
+                z-index:-1;
+            }
+            div.head{
+                float: left;
+                position: absolute;
+                z-index: 1;
+                margin-top: 4%;
+                margin-left: 20%;
+                width: 70%;
+            }
+            h2{
+                position: absolute;
+                font-family: cursive;
+                color: #f7b240;
+                text-shadow: -1px 0 black, 0 5px black, 1px 0 black, 0 -1px black;
+            }
+            input.date{
+                float: left;
+                position: absolute;
+                margin-top: 2.8%;
+                margin-left: 95%;
+                background-color: #f7b240;
+                border: 1px solid black;
+                z-index: 1;
+            }
+            div.tableSet{
+                position: absolute;
+                margin-top: 7%;
+                margin-left: 5%;
+                width: 80%;
+            }
+            div.row1{
+                position: absolute;
+                margin-top: -2%;
+            }
+            div.row2{
+                position: absolute;
+                margin-top: 12%;
+            }
+            div.row3{
+                position: absolute;
+                margin-top: 26%;
+            }
+            img.table{
+                float: left;
+                margin-right: -12%;
+                width: 30%;
+            }
+            h1{
+                position: absolute;
+                float: left;
+                font-family: cursive;
+                font-size: 600%;
+                margin-top: 8%;
+                margin-left: 12.5%;
+            }
+            img.frame{
+                position: absolute;
+                margin-top: 10%;
+                margin-left: 55%;
+                width: 40%;
+                height: 70%;
+            }
+            div.selected{
+                position: absolute;
+                margin-left: 60%;
+                width: 35%;
+                margin-top: 15%;
+            }
+            div.chairs{
+                position: absolute;
+                margin-left: 60%;
+                width: 35%;
+                margin-top: 30%;
+            }
+            input.change{
+                position: absolute;
+                background-color: #f7b240;
+                font-size: 200%;
+                border: 2px solid black;
+                height: 20%;
+                width: 10%;
+                text-align: center;
+                margin-top: 12%;
+                z-index: 1;
+            }
+            h1.chairs{
+                position: absolute;
+                font-family: cursive;
+                margin-top: -32.5%;
+                margin-left: 38.5%;
+                font-size: 400%;
+            }
+            h1.tableNum{
+                position: absolute;
+                font-family: cursive;
+                margin-top: -48.5%;
+                margin-left: 36.5%;
+                font-size: 500%;
+            }
+            img.table:hover{
+                opacity:0.4;
+                filter:alpha(opacity=40);
+            }
+        </style>
+        <script type="text/javascript">
+            
+            var chairs = 1;
+            
+            function increase(){ 
+                if(chairs<=8){
+                    chairs = chairs + 1;
+                    document.getElementById("NoOfChairs").innerHTML = "" + chairs;
+                }else if(chairs>=8){
+                    alert("Maximum 9 chairs per desk");
+                }
+            }
+            
+            function decrease(){
+                if(chairs<=1){
+                    alert("Minimum 1 chairs per desk");
+                }else if(chairs>1){
+                    chairs = chairs - 1;
+                    document.getElementById("NoOfChairs").innerHTML = "" + chairs;
+                }
+            }
+            
+            var desk = 0;
+            
+            function changeDesk(clicked_id){
+                document.getElementById("tableNo").innerHTML = "" + clicked_id;
+            }
+            
+        </script>
+    </head>
+    <body>
+        <img class="wood" src="Images/Designing_Process/WoodWallFrame.png">
+        <div class="head">
+            <h2>SELECT A TABLE NUMBER</h2>
+            <h2 style="margin-left: 47%">PLEASE SELECT A DATE HERE</h2>
+            <input class="date" style="margin-left: 85%;" type="time">
+            <input class="date" type="date">
+        </div>
+        <div class="tableSet">
+            <div class="row1">
+                <h1>1</h1>
+                <h1 style="margin-left: 30.5%">2</h1>
+                <h1 style="margin-left: 48.5%">3</h1>
+                <img class="table" src="Images/Designing_Process/Table_Number.png" id="1" onclick="changeDesk(this.id)">
+                <img class="table" src="Images/Designing_Process/Table_Number.png" id="2" onclick="changeDesk(this.id)">
+                <img class="table" src="Images/Designing_Process/Table_Number.png" id="3" onclick="changeDesk(this.id)">
+            </div>
+            <div class="row2">
+                <h1>4</h1>
+                <h1 style="margin-left: 30.5%">5</h1>
+                <h1 style="margin-left: 48.5%">6</h1>
+                <img class="table" src="Images/Designing_Process/Table_Number.png" id="4" onclick="changeDesk(this.id)">
+                <img class="table" src="Images/Designing_Process/Table_Number.png" id="5" onclick="changeDesk(this.id)">
+                <img class="table" src="Images/Designing_Process/Table_Number.png" id="6" onclick="changeDesk(this.id)">
+            </div>
+            <div class="row3">
+                <h1>7</h1>
+                <h1 style="margin-left: 30.5%">8</h1>
+                <h1 style="margin-left: 48.5%">9</h1>
+                <img class="table" src="Images/Designing_Process/Table_Number.png" id="7" onclick="changeDesk(this.id)">
+                <img class="table" src="Images/Designing_Process/Table_Number.png" id="8" onclick="changeDesk(this.id)">
+                <img class="table" src="Images/Designing_Process/Table_Number.png" id="9" onclick="changeDesk(this.id)">
+            </div>
+        </div>
+        <img class="frame" src="Images/Designing_Process/frame.png">
+        <div class="selected">
+            <h2 style="margin-left: 25%; margin-top: 2%">DESK NUMBER</h2>
+            <img style="width: 70%; margin-left: 6%; margin-top: -5%" src="Images/Designing_Process/Table_Number.png">
+            <h1 class="tableNum" id="tableNo">0</h1>
+        </div>
+        <div class="chairs">
+            <h2 style="margin-left: 18%; margin-top: 2%">NUMBER OF CHAIRS</h2>
+            <div style="position: absolute;">
+                <form style="position: static">
+                    <input style="margin-left: 10%" class="change" type="button" id="plus" value="+" onclick="increase()">
+                    <input style="margin-left: 65%" class="change" type="button" id="minus" value="-" onclick="decrease()">
+                </form>  
+                <img style="width: 45%; margin-left: 20%; margin-top: -5%" src="Images/Designing_Process/Number_Of_Chairs.png">
+                <h1 class="chairs" id="NoOfChairs">1</h1>
+            </div>
+        </div>
+        <a href="Home.html" target="_blank"><img style="width: 10%; margin-top: 35%" src="Images/Designing_Process/Home.png"></a>
+    </body>
+</html>

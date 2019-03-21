@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Loading page</title>
+        <style type="text/css">
+            body{
+                background-image:url(Images/Designing_Process/Background.jpg);
+                background-repeat: no-repeat;
+            }
+            img.title{
+                margin-left: 5%;
+                width: 90%;
+                height: 60%;
+            }
+            img.count{
+                margin-top: -7%;
+                margin-left: 35.5%;
+                width: 30%;
+            }
+            #loader {
+              position: absolute;
+              left: 54%;
+              top: 80%;
+              margin: -75px 0 0 -75px;
+              border: 16px solid black;
+              border-radius: 50%;
+              border-top: 16px solid black;
+              height: 17%;
+              -webkit-animation: spin 2s linear infinite;
+              animation: spin 2s linear infinite;
+            }
+
+            @-webkit-keyframes spin {
+              0% { -webkit-transform: rotate(0deg); }
+              100% { -webkit-transform: rotate(360deg); }
+            }
+
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+            .animate-bottom {
+              position: relative;
+              -webkit-animation-name: animatebottom;
+              -webkit-animation-duration: 1s;
+              animation-name: animatebottom;
+              animation-duration: 1s
+            }
+
+            @-webkit-keyframes animatebottom {
+              from { bottom:-100px; opacity:0 } 
+              to { bottom:0px; opacity:1 }
+            }
+
+            @keyframes animatebottom { 
+              from{ bottom:-100px; opacity:0 } 
+              to{ bottom:0; opacity:1 }
+            }
+        </style>
+        <script type="text/javascript">
+            function counting(){  
+                setTimeout(function(){window.location.href='Home.html'},5000);  //change page after 5 seconds
+            }
+        </script>
+    </head>
+    <body onload="counting()" style="margin:0;">
+        <img class="title" src="Images/Designing_Process/Name.png">
+        <img class="count" src="Images/Designing_Process/Loading_Logo.png">
+        
+        <div id="loader"></div>
+
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+          <h2>Tada!</h2>
+          <p>Some text in my newly loaded page..</p>
+        </div>
+    </body>
+</html>

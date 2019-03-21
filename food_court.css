@@ -1,0 +1,58 @@
+body{
+    background-image:url(Images/Designing_Process/Background.jpg);
+    background-repeat: no-repeat;
+}
+div.title{
+    margin-top: -7%;
+    margin-left: 9%;
+}
+img.title{
+    width: 80%;
+    height: 60%;
+}
+div.logo{
+    position: relative;
+    margin-left: -15%;
+    margin-top: -18%;
+    z-index: -1;
+}
+img.logo{
+    width: 40%;
+    height: 75%;
+}
+div.bar{
+    position: relative;
+    background-color: #f7b240;
+    width: 88%;
+    height: 10%;
+    border: 2px solid black;
+    margin-top: -7%;
+    margin-left: 10%;
+    z-index: -2;
+    color:  #f7b240;
+}
+ul.navi{
+    list-style-type:none;
+    margin-left: 79.8%;
+    margin-top: -4.5%;
+}
+a.navi{
+    font-family: cursive;
+    background-color:#f7b240;
+    float: left;
+    font-weight:bold;
+    color:black;
+    width:40%;
+    text-align:center;
+    padding:4px;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    margin-right: 1%;
+}
+a.navi:link,a.navi:visited{               
+    text-decoration:none;
+}
+a.navi:hover,a.navi:active{
+    background-color:chocolate;
+}
